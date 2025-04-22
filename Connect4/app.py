@@ -431,3 +431,6 @@ async def make_move(game_state: GameState) -> AIResponse:
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8080)
+@app.get("/api/test")
+async def health_check():
+    return {"status": "ok", "message": "Server is running"}
